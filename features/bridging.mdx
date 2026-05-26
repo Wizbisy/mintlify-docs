@@ -25,7 +25,7 @@ Aegis integrates with **Circle's CrossChain Transfer Protocol (CCTP)** to enable
   </Step>
 
   <Step title="Get a fee estimate">
-    Check the bridging fee for a specific route. `fromChain` is optional and defaults to Arc Testnet when omitted:
+    Check the bridging fee for a specific route. `fromChain` is required:
 
     ```bash
     curl -X POST https://api.aegisintent.xyz/v1/actions/bridge/fee \
@@ -76,7 +76,7 @@ Aegis integrates with **Circle's CrossChain Transfer Protocol (CCTP)** to enable
 | ----------- | ------ | -------- | --------------------------------------------------------------------- |
 | `toChain`   | string | Yes      | Destination chain identifier (e.g. `"BASE-SEPOLIA"`, `"ETH-SEPOLIA"`) |
 | `amount`    | string | Yes      | Amount of USDC to bridge                                              |
-| `fromChain` | string | No       | Source chain identifier (defaults to `ARC-TESTNET`)                   |
+| `fromChain` | string | Yes      | Source chain identifier                                               |
 | `recipient` | string | No       | Destination address (defaults to agent's own wallet)                  |
 
 ## Related Endpoints
