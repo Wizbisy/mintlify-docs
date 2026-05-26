@@ -695,6 +695,51 @@
         "tags": [
           "Actions API"
         ],
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "required": [
+                  "tokenIn",
+                  "tokenOut",
+                  "amount"
+                ],
+                "properties": {
+                  "tokenIn": {
+                    "type": "string",
+                    "enum": [
+                      "USDC",
+                      "EURC",
+                      "cirBTC"
+                    ],
+                    "description": "Input token"
+                  },
+                  "tokenOut": {
+                    "type": "string",
+                    "enum": [
+                      "USDC",
+                      "EURC",
+                      "cirBTC"
+                    ],
+                    "description": "Output token"
+                  },
+                  "amount": {
+                    "type": "string",
+                    "description": "Swap amount as a decimal string with up to 6 decimals"
+                  },
+                  "slippageBps": {
+                    "type": "integer",
+                    "minimum": 0,
+                    "maximum": 500,
+                    "description": "Optional slippage in basis points"
+                  }
+                }
+              }
+            }
+          }
+        },
         "security": [
           {
             "BearerAuth": []
@@ -750,6 +795,18 @@
               "type": "integer"
             },
             "description": "Current agent action nonce"
+          },
+          {
+            "name": "Content-Type",
+            "in": "header",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "enum": [
+                "application/json"
+              ]
+            },
+            "description": "Request body must be JSON"
           }
         ]
       }
