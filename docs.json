@@ -133,6 +133,14 @@
   "navbar": {
     "links": [
       {
+        "label": "Launch App",
+        "href": "https://aegisintent.xyz"
+      },
+      {
+        "label": "GitHub",
+        "href": "https://github.com/Wizbisy/aegiS"
+      },
+      {
         "label": "Support",
         "href": "mailto:support@aegisintent.xyz"
       }
